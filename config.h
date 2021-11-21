@@ -11,8 +11,8 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "Cascadia Code:size=14" };
-static const char dmenufont[]       = "Source Code Pro:size=14";
+static const char *fonts[]          = { "Cascadia Code:size=16" };
+static const char dmenufont[]       = { "Source Code Pro:size=14" };
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
@@ -94,12 +94,14 @@ static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 static const char *trayercmd[] = { "/home/akashiyachime/dwm/scripts/t-toggle.sh", NULL };
 static const char *browser[] = { "google-chrome-stable", NULL };
+static const char *alacritty[] = { "alacritty", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
     { MODKEY,                       XK_g,      spawn,          {.v = browser } },
     { MODKEY|ShiftMask,             XK_t,      spawn,          {.v = trayercmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = dmenucmd } },
+	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = alacritty } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
 	{ MODKEY|Mod4Mask|ShiftMask,    XK_u,      incrgaps,       {.i = -1 } },
