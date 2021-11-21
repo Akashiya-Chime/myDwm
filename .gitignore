@@ -1,2 +1,4 @@
 *.diff
 *.o
+*.rej
+*.orig
