@@ -100,15 +100,17 @@ static const char *lightdown[] = { "/home/akashiyachime/dwm/scripts/light-down.s
 static const char *volup[] = { "/home/akashiyachime/dwm/scripts/vol-up.sh", NULL};
 static const char *voldown[] = { "/home/akashiyachime/dwm/scripts/vol-down.sh", NULL};
 static const char *volmute[] = { "/home/akashiyachime/dwm/scripts/vol-toggle.sh", NULL};
+static const char *screenshot[] = { "/home/akashiyachime/dwm/scripts/screenshot.sh", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+    { ControlMask|Mod1Mask,         XK_z,      spawn,          {.v = screenshot } },
     { MODKEY|Mod1Mask,              XK_j,      spawn,          {.v = voldown } },
     { MODKEY|Mod1Mask,              XK_k,      spawn,          {.v = volup } },
     { MODKEY|Mod1Mask,              XK_l,      spawn,          {.v = volmute } },
     { MODKEY|Mod1Mask,              XK_n,      spawn,          {.v = lightup } },
     { MODKEY|Mod1Mask,              XK_m,      spawn,          {.v = lightdown } },
-    { MODKEY|Mod1Mask,              XK_g,      spawn,          {.v = browser } },
+    { MODKEY,                       XK_g,      spawn,          {.v = browser } },
     { MODKEY|ShiftMask,             XK_t,      spawn,          {.v = trayercmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = alacritty } },

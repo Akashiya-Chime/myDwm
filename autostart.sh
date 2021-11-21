@@ -11,3 +11,4 @@ fcitx5 &
 variety &
 utools &
 klipper &
+flameshot &
