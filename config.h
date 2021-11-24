@@ -12,12 +12,16 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
 static const char *fonts[]          = { "Caskaydia Cove Nerd Font Complete:size=14" };
+// static const char *fonts[]          = { "Ubuntu Nerd Font Complete:size=14" };
+// static const char *fonts[]          = { "mononoki-Regular Nerd Font Complete:size=14" };
 static const char dmenufont[]       = { "Caskaydia Cove Nerd Font Complete:size=14" };
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
+// static const char col_cyan[]        = "#005577";
+// static const char col_cyan[]        = "#af87d7";
+static const char col_cyan[]        = "#bd93f9";
 static const unsigned int baralpha = 0xd0;
 static const unsigned int borderalpha = OPAQUE;
 static const char *colors[][3]      = {
@@ -101,9 +105,13 @@ static const char *volup[] = { "/home/akashiyachime/dwm/scripts/vol-up.sh", NULL
 static const char *voldown[] = { "/home/akashiyachime/dwm/scripts/vol-down.sh", NULL};
 static const char *volmute[] = { "/home/akashiyachime/dwm/scripts/vol-toggle.sh", NULL};
 static const char *screenshot[] = { "/home/akashiyachime/dwm/scripts/screenshot.sh", NULL};
+static const char *changebg[] = { "/home/akashiyachime/dwm/scripts/changebg.sh", NULL};
+static const char *opendoor[] = { "/home/akashiyachime/dwm/scripts/opendoor.sh", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+    { MODKEY|Mod1Mask,              XK_d,      spawn,          {.v = opendoor } },
+    { MODKEY,                       XK_y,      spawn,          {.v = changebg } },
     { ControlMask|Mod1Mask,         XK_z,      spawn,          {.v = screenshot } },
     { MODKEY|Mod1Mask,              XK_j,      spawn,          {.v = voldown } },
     { MODKEY|Mod1Mask,              XK_k,      spawn,          {.v = volup } },

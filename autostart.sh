@@ -12,3 +12,5 @@ variety &
 utools &
 klipper &
 flameshot &
+bash ~/myexp/rm-screenshot.sh
+
