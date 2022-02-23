@@ -2,3 +2,5 @@
 *.o
 *.rej
 *.orig
+
+scripts
