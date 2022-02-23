@@ -6,11 +6,11 @@ xrander --output eDP1 --mode 1920x1080 -hsync +vsync --rate 60 &
 picom &
 nm-applet &
 xfce4-power-manager &
-xfce4-volumed-pulse &
+# xfce4-volumed-pulse &
 fcitx5 &
 variety &
 utools &
 klipper &
 flameshot &
 bash ~/myexp/rm-screenshot.sh
-
+xmodmap ~/.Xmodmap

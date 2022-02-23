@@ -107,9 +107,11 @@ static const char *volmute[] = { "/home/akashiyachime/dwm/scripts/vol-toggle.sh"
 static const char *screenshot[] = { "/home/akashiyachime/dwm/scripts/screenshot.sh", NULL};
 static const char *changebg[] = { "/home/akashiyachime/dwm/scripts/changebg.sh", NULL};
 static const char *opendoor[] = { "/home/akashiyachime/dwm/scripts/opendoor.sh", NULL};
+static const char *networkdmenu[] = {"/home/akashiyachime/dwm/scripts/networkdmenu.sh", NULL};
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+    { MODKEY|ShiftMask,             XK_d,      spawn,          {.v = networkdmenu } },
     { MODKEY|Mod1Mask,              XK_d,      spawn,          {.v = opendoor } },
     { MODKEY,                       XK_y,      spawn,          {.v = changebg } },
     { ControlMask|Mod1Mask,         XK_z,      spawn,          {.v = screenshot } },
@@ -167,7 +169,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_s,      show,           {0} },
-	{ MODKEY,                       XK_h,      hide,           {0} },
+	// { MODKEY,                       XK_h,      hide,           {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
