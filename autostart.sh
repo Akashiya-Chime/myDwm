@@ -8,7 +8,7 @@ nm-applet &
 xfce4-power-manager &
 # xfce4-volumed-pulse &
 fcitx5 &
-variety &
+variety -n &
 utools &
 klipper &
 flameshot &

@@ -108,6 +108,7 @@ static const char *screenshot[] = { "/home/akashiyachime/dwm/scripts/screenshot.
 static const char *changebg[] = { "/home/akashiyachime/dwm/scripts/changebg.sh", NULL};
 static const char *opendoor[] = { "/home/akashiyachime/dwm/scripts/opendoor.sh", NULL};
 static const char *networkdmenu[] = {"/home/akashiyachime/dwm/scripts/networkdmenu.sh", NULL};
+static const char *browser2[] = { "microsoft-edge-stable", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -120,6 +121,7 @@ static Key keys[] = {
     { MODKEY|Mod1Mask,              XK_l,      spawn,          {.v = volmute } },
     { MODKEY|Mod1Mask,              XK_n,      spawn,          {.v = lightup } },
     { MODKEY|Mod1Mask,              XK_m,      spawn,          {.v = lightdown } },
+    { MODKEY|ShiftMask,             XK_g,      spawn,          {.v = browser2  } },
     { MODKEY,                       XK_g,      spawn,          {.v = browser } },
     { MODKEY|ShiftMask,             XK_t,      spawn,          {.v = trayercmd } },
 	{ MODKEY,                       XK_w,      spawn,          {.v = dmenucmd } },
