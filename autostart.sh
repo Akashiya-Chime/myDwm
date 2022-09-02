@@ -10,7 +10,7 @@ xfce4-power-manager &
 fcitx5 &
 variety -n &
 utools &
-klipper &
 flameshot &
+greenclip daemon &
 bash ~/myexp/rm-screenshot.sh
 xmodmap ~/.Xmodmap

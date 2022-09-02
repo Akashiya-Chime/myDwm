@@ -11,8 +11,8 @@ static       int smartgaps          = 0;        /* 1 means no outer gap when the
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const Bool viewontag         = True;     /* Switch view on tag switch */
-static const char *fonts[]          = { "Caskaydia Cove Nerd Font Complete:size=14" };
-// static const char *fonts[]          = { "Ubuntu Nerd Font Complete:size=14" };
+// static const char *fonts[]          = { "Caskaydia Cove Nerd Font Complete:size=14" };
+static const char *fonts[]          = { "Caskaydia Cove Nerd Font Complete:pixelsize=24" };
 // static const char *fonts[]          = { "mononoki-Regular Nerd Font Complete:size=14" };
 static const char dmenufont[]       = { "Caskaydia Cove Nerd Font Complete:size=14" };
 static const char col_gray1[]       = "#222222";
@@ -109,9 +109,11 @@ static const char *changebg[] = { "/home/akashiyachime/dwm/scripts/changebg.sh",
 static const char *opendoor[] = { "/home/akashiyachime/dwm/scripts/opendoor.sh", NULL};
 static const char *networkdmenu[] = {"/home/akashiyachime/dwm/scripts/networkdmenu.sh", NULL};
 static const char *browser2[] = { "microsoft-edge-stable", NULL };
+static const char *rofi[] = { "rofi", "-show", "run", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
+    { Mod1Mask,                     XK_space,  spawn,          {.v = rofi } },
     { MODKEY|ShiftMask,             XK_d,      spawn,          {.v = networkdmenu } },
     { MODKEY|Mod1Mask,              XK_d,      spawn,          {.v = opendoor } },
     { MODKEY,                       XK_y,      spawn,          {.v = changebg } },
@@ -124,7 +126,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_g,      spawn,          {.v = browser2  } },
     { MODKEY,                       XK_g,      spawn,          {.v = browser } },
     { MODKEY|ShiftMask,             XK_t,      spawn,          {.v = trayercmd } },
-	{ MODKEY,                       XK_w,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ControlMask,           XK_Return, spawn,          {.v = alacritty } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|Mod4Mask,              XK_u,      incrgaps,       {.i = +1 } },
@@ -158,8 +160,11 @@ static Key keys[] = {
 	// { MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_x,      killclient,     {0} },
+    // set layout to tile
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+    // set layout to monocle
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+    // set layout to spiral
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
@@ -170,8 +175,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_s,      show,           {0} },
-	// { MODKEY,                       XK_h,      hide,           {0} },
+	// { MODKEY,                       XK_z,      show,           {0} },
+    { MODKEY|ShiftMask,             XK_h,      hide,           {0} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
